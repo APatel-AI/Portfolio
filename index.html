@@ -1,12 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-</head>
-<body>
-    <h1>Starting Template</h1>
-    
-</body>
+    <link rel="stylesheet" href="Assets/Styles/styles.css" />
+    <!-- FAVICON -->
+    <link
+      rel="shortcut icon"
+      href="Assets/Images/logo.png"
+      type="image/x-icon"
+    />
+    <script defer src="Assets/JavaScript/main.js"></script>
+
+    <!-- Material Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+  </head>
+  <body>
+    <!-- HEADER  -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo"> Arpan </a>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list grid">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">
+                <i class='bx bxs-home-smile bx-sm'></i> Home
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#education" class="nav__link"> 
+                <i class='bx bxs-book-reader bx-sm'></i>Education
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">
+                <i class='bx bxs-briefcase bx-sm'></i> Skills</a>
+            </li>
+            <li class="nav__item">
+              <a href="#projects" class="nav__link"> 
+                <i class='bx bxs-image bx-sm' ></i> Projects
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link"> <i class='bx bxs-message-square-dots bx-sm' ></i>Contact</a>
+            </li>
+          </ul>
+
+          <!-- collapse nav -->
+          <div class="nav__close" id="nav-close">
+            <i class='bx bx-x bx-sm' ></i>
+          </div>
+        </div>
+
+        <div class="nav__buttons">
+            <!-- DARK MODE THEME CHANGE -->
+            <!-- <i class='bx bx-moon bx-sm change-theme' id="theme-button" > -->
+
+                <!-- Toggle -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu bx-sm' ></i>
+                </div>
+            </i>
+
+        </div>
+
+
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main"></main>
+
+    <!-- FOOTER -->
+    <footer class="footer"></footer>
+  </body>
 </html>
