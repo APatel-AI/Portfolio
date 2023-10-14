@@ -197,9 +197,7 @@ body.dark-theme {
         width: 88%;
         left: 0;
         right: 0;
-        /* CHANGE TO TOP  */
-        bottom: 2rem; 
-        /* CHANGE BOTTOM to -60% */
+        bottom: -60%; 
         margin: 0 auto;
         background-color: var(--body-color);
         box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
@@ -242,10 +240,68 @@ body.dark-theme {
 }
 
 /* Show menu */
+.show-menu{
+  bottom: 2rem;
+}
 
 /* Active link */
 
 /*=============== HOME ===============*/
+
+.home__container{
+  row-gap: 4rem;
+  padding-top: 5rem;
+}
+
+.home__data{
+  row-gap: 1.5rem;
+}
+
+.home__title{
+  text-align: center;
+  font-size: var(--biggest-font-size);
+  letter-spacing: .3px;
+  margin-bottom: .5rem;
+}
+
+.home__profile{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: var(--body-color);
+  justify-self: center;
+  place-items: center;
+}
+
+.home__perfil{
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: flex-end;
+
+
+}
+
+.home__perfil img{
+  width: 200px;
+}
+
+.home__social{
+  justify-self: center;
+  display: flex;
+  column-gap: 1.25rem;
+  
+}
+
+.home__social-link{
+  font-size: 1.25rem;
+  color: var(--text-color-light);
+  transition: color .3s;
+}
+
+.home__social-link:hover{
+  color: var(--title-color);
+}
 
 /*=============== SKILLS ===============*/
 
