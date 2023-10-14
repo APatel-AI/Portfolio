@@ -134,6 +134,7 @@ body.dark-theme {
 }
 
 .section__title,
+.section__subtitle_About,
 .section__subtitle {
   text-align: center;
 }
@@ -149,6 +150,12 @@ body.dark-theme {
   font-size: var(--small-font-size);
   color: var(--text-color-light);
   margin-bottom: 3rem;
+}
+.section__subtitle_About{
+  display: block;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  margin-bottom: 0.5rem;
 }
 
 .main {
@@ -305,15 +312,244 @@ body.dark-theme {
 
 /*=============== SKILLS ===============*/
 
-/* Animation skills */
+.skills__container{
+  row-gap:3.5rem;
+}
 
-/*=============== QUALIFICATION ===============*/
 
-/*=============== SERVICES ===============*/
+.skills__title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 2.5rem;
+}
+
+.skills__title i{
+  font-size: 1rem;
+  font-weight: initial;
+}
+
+.skills__info,
+.skills__data, 
+.skills__background{
+  display: grid;
+}
+
+.skills__info{
+  grid-template-columns: repeat(3,1fr);
+  gap: 2.5rem 2rem;
+}
+
+.skills__data{
+  justify-content: center ;
+  text-align: center;
+}
+
+.skills__background{
+  width: 80px;
+  height: 100px;
+  background-color: var(--container-color);
+  border-radius: 3rem;
+  place-items: center;
+  margin-bottom: 1rem;
+}
+
+.skills__background img{
+  width: 40px;
+
+}
+
+.skills__name{
+  font-size: var(--small-font-size);
+  margin-bottom: .25rem;
+}
+
+
+/* Animation  */
+.skills__background:hover img{
+  animation: bounce-skills .6s;
+}
+
+@keyframes bounce-skills {
+  0%{
+    transform: translate(0);
+  }
+  20%{
+    transform: translateY(-6px);
+  }
+
+  40%{
+    transform: translate(0);
+  }
+
+  60%{
+    transform: translateY(-3px);
+  }
+
+  80%{
+    transform: translate(0);
+  }
+}
+
+/*=============== CRED ===============*/
+.cred{
+  position: relative;
+}
+
+.cred__container{
+  row-gap: 3.5rem;
+}
+
+.cred__title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 2rem;
+}
+
+.cred__title i{
+  font-size: 1rem;
+  font-weight: initial;
+}
+
+.cred__info{
+  display: grid;
+  row-gap: 2rem;
+}
+
+.cred__name{
+  font-size: var(--normal-font-size);
+  margin-bottom: 1.25rem;
+}
+
+.cred__source, 
+.cred__year{
+  display: block;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.cred__source{
+  margin-bottom: .75rem;
+}
+
+/* ABOUT INFO SECTION CSS */
+.about__info__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem; /* Adjust the padding as needed */
+}
+
+.about__info {
+  max-width: 800px; /* Adjust the max-width to your preference */
+  font-size: var(--normal-font-size);
+}
+
 
 /*=============== PROJECTS ===============*/
+.projects__container{
+   overflow: initial;
+  
 
+}
+
+.projects__content{
+  display:grid; 
+  justify-content: center;
+
+
+}
+
+.projects__img{
+  width: 250px;
+  border-radius: .75rem;
+  margin-bottom: 1.25rem;
+}
+
+.projects__subtitle{
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+
+.projects__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: 1.25rem;
+  margin: .5rem 0 1.25rem;
+}
+
+.projects__button{
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+}
+
+
+.projects__button i{
+  font-size: 1rem; 
+  transition: transform .3s;
+}
+
+/* Move arrow x axis */
+.projects__button:hover i{
+
+  transform: translateX(.25rem);
+}
 /* Swiper class */
+.projects__container .swiper-button-prev::after,
+.projects__container .swiper-button-next::after{
+  content: '';
+}
+
+.projects__container .swiper-button-prev,
+.projects__container .swiper-button-next{
+  width: initial;
+  height: initial;
+  margin: initial;
+  font-size: 2.5rem;
+  color: var(--title-color);
+
+}
+
+.projects__container .swiper-button-prev{
+  left: -1rem;
+  top: 4.5rem;
+}
+
+.projects__container .swiper-button-next{
+  right: -1rem;
+  top: 4.5rem;
+}
+
+.projects__container .swiper-slide{
+  margin-bottom: 4.5rem;
+}
+
+.projects__container .swiper-pagination-bullets{
+  bottom: 0;
+}
+
+/* non active bullet point */
+.projects__container .swiper-pagination-bullet{
+  background-color: var(--text-color-light);
+  opacity: initial;
+}
+
+/* active bullet point */
+.projects__container .swiper-pagination-bullet-active{
+  background-color: var(--title-color)
+}
+
 
 /*=============== TESTIMONIAL ===============*/
 
