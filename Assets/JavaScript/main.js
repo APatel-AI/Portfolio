@@ -1,3 +1,4 @@
+
 const navMenu = document.getElementById('nav-menu'), 
     navToggle = document.getElementById('nav-toggle'),
     navClose = document.getElementById('nav-close')
@@ -43,4 +44,60 @@ let swiperProjects = new Swiper(".projects__container", {
     },
     // use arrow to go through the projects
     keyboard: true,
+
+
+    breakpoints: {
+        1200: {
+          slidesPerView: 2,
+          spaceBetween: -56,
+        },
+       
+      },
   });
+
+
+//   email
+  const contactForm = document.getElementById('contact-form'), 
+  contactName = document.getElementById('contact-name'), 
+  contactEmail = document.getElementById('contact-email'), 
+  contactProject = document.getElementById('contact-project'), 
+  contactMessage = document.getElementById('contact-message')
+
+
+
+const sendEmail = (e) => {
+    e.preventDefault()
+
+    if(contactName.value === '' || contactEmail.value === '' || contactProject.value === '' ){
+        contactMessage.classList.remove('color-blue')
+        contactMessage.classList.add('color-red')
+
+        contactMessage.textContent = 'Please complete all input fields '
+    }else{
+        // TemplateID, templateID, #form, 
+        emailjs.sendForm('service_yx6aldb','template_cflrsqg','#contact-form', 'Uz41UjpIUG3c7HJdH')
+
+        .then(()=> {
+            // Message sent success
+            contactMessage.classList.add('color-blue')
+            contactMessage.textContent = 'Message Sent 🎉 '
+            // Timer for message
+            setTimeout(() =>{
+                contactMessage.textContent = ''
+            }, 5000)
+        }, (error) => {
+            alert('Error, please try again later !', error)
+        })
+
+        // clear input field after form submission
+        contactName.value = ''
+        contactEmail.value = ''
+        contactProject.value = ''
+    }
+ }
+
+  contactForm.addEventListener('submit', sendEmail)
+
+
+
+
