@@ -42,8 +42,7 @@ let swiperProjects = new Swiper(".projects__container", {
     pagination: {
       el: ".swiper-pagination",
     },
-    // use arrow to go through the projects
-    keyboard: true,
+
 
 
     breakpoints: {
@@ -99,5 +98,54 @@ const sendEmail = (e) => {
   contactForm.addEventListener('submit', sendEmail)
 
 
+//   Scroll section
+const sections = document.querySelectorAll('section[id]')
+
+const scrollActive = () => {
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight,
+            sectionTop = current.offsetTop - 58,
+            sectionId = current.getAttribute('id'),
+            sectionsClass = document.querySelector(`.nav__menu a[href="#${sectionId}"]`)
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            sectionsClass.classList.add('active-link');
+        } else {
+            sectionsClass.classList.remove('active-link')
+        }
+    })
+}
+
+window.addEventListener('scroll', scrollActive);
 
 
+// show scroll up
+const scrollUp = () =>{
+    const scrollUp = document.getElementById('scroll-up')
+
+    this.scrollY >= 350 ? scrollUp.classList.add('show-scroll') : scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+
+// Dark Light toggle
+
+
+
+// Dark Light toggle
+const themeButton = document.getElementById('theme-button');
+const darkTheme = 'dark-theme';
+const iconTheme = 'bx bx-sun';
+
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+
+const getCurrentIcon = () => getCurrentTheme() === 'dark' ? 'bx-sun' : 'bx-moon';
+
+themeButton.addEventListener('click', () => {
+  document.body.classList.toggle(darkTheme);
+  const newIcon = getCurrentIcon(); // Get the new icon class
+  themeButton.classList.remove('bx-sun', 'bx-moon'); // Remove both possible icon classes
+  themeButton.classList.add(newIcon); // Add the new icon class
+});
