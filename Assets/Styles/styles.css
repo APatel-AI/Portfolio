@@ -1,5 +1,6 @@
 /* GOOGLE FONTS API */
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Roboto:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
 :root {
   --header-height: 3.5rem;
 
@@ -23,7 +24,8 @@
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Roboto", sans-serif;
-  --title-font: "Lora", serif;
+  --title-font: "Lato", serif;
+
   --biggest-font-size: 1.5rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
@@ -66,6 +68,25 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Apply the blinking cursor animation to the .cursor class */
+.cursor {
+  display: inline-block;
+  width: 0.1em;
+  height: 1em;
+  background-color: #4e4d4d;
+  animation: blink 1s step-end infinite;
+}
+
+.home__title #typed-text{
+  font-family: 'Lato', sans-serif;
 }
 
 /* css based from the root:  */
@@ -134,6 +155,9 @@ body.dark-theme {
 
   .dark-theme .home__social-link{
     color: var(--title-color);
+  }
+  .dark-theme .home__social-link:hover{
+    color: rgb(225, 26, 59);
   }
 
   .dark-theme .section__border{
@@ -213,13 +237,19 @@ body.dark-theme {
 
 .nav__logo, .nav__toggle, nav__close{
     color: var(--title-color);
+  
 
 }
+
+
 
 .nav__logo{
     font-family: var(--title-font);
     font-weight: var(--font-medium) ;
+  
 }
+
+
 
 .nav__toggle{
     display: flex;
@@ -301,6 +331,7 @@ body.dark-theme {
   font-size: var(--biggest-font-size);
   letter-spacing: .3px;
   margin-bottom: .5rem;
+  
 }
 
 .home__profile{
@@ -321,8 +352,12 @@ body.dark-theme {
 
 }
 
+
+
+
 .home__perfil img{
   width: 200px;
+  border-radius: 100%;
 }
 
 .home__social{
@@ -384,7 +419,7 @@ body.dark-theme {
   width: 80px;
   height: 100px;
   background-color: var(--container-color);
-  border-radius: 3rem;
+  border-radius: 0.5rem;
   place-items: center;
   margin-bottom: 1rem;
   transition: background 1s; /* for dark mode animation */
@@ -487,7 +522,10 @@ body.dark-theme {
   font-size: var(--normal-font-size);
 }
 
-
+.about__info{
+  font-family:'Times New Roman', Times, serif;
+  line-height: 2.1rem;
+}
 /*=============== PROJECTS ===============*/
 .projects__container{
    overflow: initial;
@@ -677,7 +715,7 @@ body.dark-theme {
   width: 100%;
   height: 100%;
   border: 2px solid var(--text-color-light);
-  border-radius: 2rem;
+  border-radius: .5rem;
   padding: 1.5rem;
   font-size: var(--normal-font-size);
   font-family: var(--title-font);
@@ -748,6 +786,12 @@ body.dark-theme {
 
 
 /*=============== FOOTER ===============*/
+.footer__image {
+  max-width: 100px; /* Adjust the max-width as per your design */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 1rem; /* Adjust the spacing between the image and other content */
+}
+
 .footer__container{
   padding: 3rem 0 7rem; 
   text-align: center;
@@ -956,6 +1000,7 @@ body.dark-theme {
     transition: .4s;
   }
 
+
   .nav{
     width: initial;
     height: calc(var(--header-height) + 1.5rem);
@@ -1059,7 +1104,7 @@ body.dark-theme {
   }
 
   .home__social-link{
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
 
   .home__info{
