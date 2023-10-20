@@ -167,10 +167,9 @@ sr.reveal(`.skills__content:nth-child(2), .contact__content:nth-child(2)`, {orig
 sr.reveal(`.cred__content:nth-child(1)`, {interval:100 , origin: 'top'} )
 sr.reveal(`.cred__content:nth-child(2)`, {interval:10 , origin: 'bottom'} )
 
-
 const typedText = document.getElementById('typed-text');
 const cursor = '<span class="cursor"></span>';
-const textArray = ["Fullstack Developer", "UI/UX Developer", "Tech Enthusiast"];
+const textArray = ["Fullstack Developer" + " & UI/UX Enthusiast"];
 let textIndex = 0;
 let charIndex = 0;
 
@@ -181,24 +180,22 @@ function type() {
       charIndex++;
       setTimeout(type, 100);
     } else {
-      setTimeout(deleteText, 1000); // Delay before deleting the text
+      typedText.innerHTML += ' ' + cursor;
+      textIndex++;
+      charIndex = 0;
+      setTimeout(removeCursor, 5000); // 
     }
   }
 }
 
-function deleteText() {
-  if (charIndex >= 0) {
-    typedText.innerHTML = textArray[textIndex].substring(0, charIndex);
-    charIndex--;
-    setTimeout(deleteText, 100);
-  } else {
-    textIndex++;
-    charIndex = 0;
-    if (textIndex < textArray.length) {
-      setTimeout(type, 1000); // Delay before typing the next line
-    }
+function removeCursor() {
+  const cursorElement = document.querySelector('.cursor');
+  if (cursorElement) {
+    cursorElement.style.display = 'none'; 
   }
 }
 
 type();
+
+
 
