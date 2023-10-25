@@ -167,35 +167,9 @@ sr.reveal(`.skills__content:nth-child(2), .contact__content:nth-child(2)`, {orig
 sr.reveal(`.cred__content:nth-child(1)`, {interval:100 , origin: 'top'} )
 sr.reveal(`.cred__content:nth-child(2)`, {interval:10 , origin: 'bottom'} )
 
-const typedText = document.getElementById('typed-text');
-const cursor = '<span class="cursor"></span>';
-const textArray = ["Fullstack Developer" + " & UI/UX Enthusiast"];
-let textIndex = 0;
-let charIndex = 0;
 
-function type() {
-  if (textIndex < textArray.length) {
-    if (charIndex < textArray[textIndex].length) {
-      typedText.innerHTML += textArray[textIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(type, 100);
-    } else {
-      typedText.innerHTML += ' ' + cursor;
-      textIndex++;
-      charIndex = 0;
-      setTimeout(removeCursor, 5000); // 
-    }
-  }
-}
-
-function removeCursor() {
-  const cursorElement = document.querySelector('.cursor');
-  if (cursorElement) {
-    cursorElement.style.display = 'none'; 
-  }
-}
-
-type();
-
-
-
+var cursor = document.querySelector(".cursor")
+var cursor2 = document.querySelector(".cursor2")
+document.addEventListener("mousemove", function(e){
+  cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px; "
+})
