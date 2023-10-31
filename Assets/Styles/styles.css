@@ -259,7 +259,7 @@ body.dark-theme {
     padding-inline: 1.5rem;
     border-radius: 0.5rem;
     transition: background 0.4s; /* for dark mode animation */
-    opacity: 80%;
+    opacity: 100%;
 
 }
 
